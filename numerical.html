@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BCA-504 Numerical Methods</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #0073e6;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5em;
+    }
+
+    .search-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    #search-bar {
+      padding: 8px;
+      width: 70%;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .sidebar-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 160px;
+      background-color: #333;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 60px;
+      left: -160px;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+      z-index: 998;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 18px;
+      border-bottom: 1px solid #444;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+    }
+
+    /* SCROLLABLE LINKS */
+    .scrollable-links {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-left: 0;
+      z-index: 999;
+    }
+
+    .scrollable-links a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    .scrollable-links a:hover {
+      background-color: #0073e6;
+      color: white;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+      padding: 20px;
+      margin-top: 130px;
+       
+    }
+
+    
+    /* FOOTER */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      
+      margin-top: 50px;
+    }
+
+    /* DESKTOP STYLES */
+    @media (min-width: 768px) {
+      .sidebar {
+        left: 0;
+      }
+
+      .sidebar-toggle {
+        display: none;
+      }
+
+      .main {
+        margin-left: 250px;
+      }
+
+      .scrollable-links {
+        padding-left: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="logo">BCA-HUB</div>
+  
+    </div>
+  </header>
+
+  <!-- SCROLLABLE LINKS -->
+  <div class="scrollable-links">
+    <a href="index.html">home</a>
+    <a href="gst.html">All Calculator</a>
+    <a href="math.html">All sem</a>
+    <a href="all.html">C language Quiz</a>
+    <a href="#same2"></a>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <a href="#">sem 1</a>
+    <a href="#" style="color: #7d9f39;">SEMESTER-I</a>
+         <a href="math.html">Mathematics 101</a>
+        <a href="algorithm.html">algorithm 102</a>
+        <a href="computer.html">computer 103</a>
+        <a href="principal.html">principal 104</a>
+         <a href="besnuss.html">business 106</a>
+
+          <a href="#"style="color: #7d9f39;">SEMESTER -II</a>
+        <a href="amth2.html">mathmaitcs 201</a>
+        <a href="cprogram.html">C Programming 202</a>
+        <a href="organiz.html">Organization Behavior 203</a>
+         <a href="digital.html">Digital electronics and Computer Organisation 204</a>
+        <a href="financial.html">Financial Accounting & Management 205</a>
+    
+        <a href="#" style="color: #7d9f39;">SEMESTER -III</a>
+         <a href="object.html">Object Oriented programming language 301</a>
+    <a href="data3.html">Data Structure Using C & C++ 302</a>
+    <a href="assembly.html">Computer Architecture & Assembly Language 303</a>
+    <a href="business.html">Business Economics 304</a>
+    <a href="statics.html">Elements of Statistics 305</a>
+
+     <a href="#" style="color: #7d9f39;">SEMESTER -IV</a>
+    <a href="graphic.html">Computer Graphics & Multimedia Application 401</a>
+    <a href="oprating.html">Operating System 402</a>
+    <a href="softwere.html">Software Engineering 403</a>
+    <a href="opyimazation.html">Optimization Techniques 404</a>
+    <a href="mathmaitcs.html">Mathematics –II 405</a>
+
+     <a href="#" style="color: #7d9f39;">SEMESTER -V</a>
+    <a href="dbms.html">Introduction to DBMS 501</a>
+    <a href="java.html">Java Programming and Dynamic Webpage Design 502</a>
+    <a href="comnetwork.html">Computer Network 503</a>
+    <a href="numerical.html">Numerical Methods 504</a>
+
+     <a href="#" style="color: #7d9f39;">SEMESTER-VI</a>
+    <a href="network.html">Computer Network Security 601</a>
+    <a href="system.html">Information System Analysis Design and Implementation 602</a>
+    <a href="ecommorce.html">E-Commerce 603</a>
+    <a href="nowlege.html">Knowledge Management. 604</a>
+ <a href="#"></a>
+  <a href="#"></a>
+  <a href="#"></a>
+  <a href="#"></a>
+  <a href="#"></a>
+    
+  </div>
+
+  
+  <!-- MAIN CONTENT -->
+  <div class="main">
+    <h1>BCA-504 Numerical Methods</h1>
+    <br>
+    <h1>UNIT-I</h1>
+<br>
+<h1>Roots of Equations:</h1>
+<br>
+<p>: Bisections Method, False Position Method, Newton’s Raphson Method,
+Rate of convergence of Newton’s method.</p>
+<br>
+<br>
+<br>
+<h1>UNIT-II</h1>
+<br>
+<h1>Interpolation and Extrapolation</h1>
+<br>
+<p>: Finite Differences, The operator E, Newton’s Forward and
+Backward Differences, Newton’s dividend differences formulae, Lagrange’s Interpolation
+formula for unequal Intervals, Gauss’s Interpolation formula, Starling formula, Bessel’s formula,
+Laplace-Everett formula.</p>
+<br>
+<br>
+<br>
+<h1>UNIT-III</h1>
+<br>
+<h1>Numerical Differentiation Numerical Integration :</h1>
+<br>
+<p>Introduction, direct methods, maxima and
+minima of a tabulated function, General Quadratic formula, Trapezoidal rule, Simpson’s One
+third rule, Simpson’s three- eight rule.</p>
+<br>
+<br>
+<br>
+<h1>UNIT-IV</h1>
+<br>
+<h1>Solution of Linear Equation</h1>
+<br>
+<p>: Gauss’s Elimination method and Gauss’s Siedel iterative method.</p>
+<br>
+<br>
+<br>
+<h1>UNIT-V</h1>
+<br>
+<h1>Solution of Differential Equations</h1>
+<br>
+<p>Euler’s method, Picard’s method, Fourth-order Ranga –
+Kutta method.</p>
+
+
+  
+
+
+
+<style>
+      .quastion{
+        
+            display: grid;
+            gap: 10px;
+            background-color: white;
+            padding: 20px;
+            width: 550px;
+            border: 8px;
+            border-radius: 8px;
+    }
+        .quastion :hover {
+      color: #d8d510;
+    }
+
+    .quastion a{
+          color: #457332;
+            text-decoration: none;
+            padding: 5px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            text-align: center;
+            border-radius: 8px;
+    }
+    
+     .quastion a:hover {
+      color: #d8d510;
+    }
+
+
+    @media (max-width: 768px) {
+      .quastion {
+        width: 120% ;
+        padding: 10px;
+      }
+    }
+    </style>
+<div class="quastion">
+        <h1 id="same1">Bachelors of Computer Application </h1>
+        <br>
+
+        <h1>SEMESTER-I</h1>
+        <br>
+        <a href="math.html">101 Mathematics-I</a>
+        <a href="algorithm.html">102 Programming Principle & Algorithm
+</a>
+        <a href="computer.html">103 Computer Fundamental and Office
+Automation</a>
+        <a href="principal.html">104 Principle of Management</a>
+        <a href="besnuss.html">106 Business Communication</a>
+        <br>
+      
+        
+    </div>
+    <br>
+    <br>
+    <div class="quastion">
+         <h1 id="Same2">Bachelors of Computer Application </h1>
+         <br>
+         <h1>SEMESTER -II</h1>
+        <a href="amth2.html">201 Mathematics-II</a>
+        <a href="cprogram.html">202 C-Programming</a>
+        <a href="organiz.html">203 Organization Behavior</a>
+        <a href="digital.html">204 Digital Electronics and Computer Organisation</a>
+        <a href="financial.html">205 Financial Accounting and Management</a>
+    </div>
+    <br>
+    <br>
+    <div class="quastion">
+         <h1 id="same3">Bachelors of Computer Application </h1>
+        <br>
+        <h1> SEMESTER -III</h1>
+
+        <a href="object.html">301 Object Oriented Programming Using C++</a>
+        <a href="data3.html">302 Data Structure Using C & C++</a>
+        <a href="assembly.html">303 Computer Architecture & Assembly Language</a>
+        <a href="business.html">304 Business Economics</a>
+        <a href="statics.html">305 Elements of Statistics</a>
+    </div>
+    <br>
+    <br>
+    <div class="quastion">
+        <h1 id="seme4">Bachelors of Computer Application</h1>
+        <br>
+        <h1>SEMESTER -IV</h1>
+        <a href="graphic.html">401 Computer Graphics & Multimedia Application</a>
+        <a href="oprating.html">402 Operating System</a>
+        <a href="softwere.html">403 Software Engineering</a>
+        <a href="opyimazation.html">404 Optimization Techniques</a>
+        <a href="mathmaitcs.html">405 Mathematics-III</a>
+    </div>
+    <br>
+    <br>
+    <br>
+     <div class="quastion">
+        <h1 id="Semester5">Bachelors of Computer Application</h1>
+        <br>
+        <h1>SEMESTER -V</h1>
+        <a href="dbms.html">501 Introduction to DBMS</a>
+        <a href="java.html">502 Java Programming and Dynamic Webpage Design </a>
+        <a href="comnetwork.html">503 Computer Network</a>
+        <a href="numerical.html">504 Numerical Methods</a>
+    </div>
+    <br>
+    <br>
+    <br>
+      <div class="quastion">
+        <h1 id="same6">Bachelors of Computer Application</h1>
+        <br>
+        <h1>SEMESTER-VI
+</h1>
+        <a href="network.html">601 Computer Network Security</a>
+        <a href="system.html">602 Information System: Analysis Design & Implementation</a>
+        <a href="ecommorce.html">603 E-Commerce</a>
+        <a href="nowlege.html">604 Knowledge Management
+</a>
+    </div>
+   
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 BCA-HUB</p>
+  </footer>
+
+  <!-- JS --
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show');
+    }
+  </script>-->
+  <script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('show');
+  }
+
+  // Sidebar close on outside touch (for mobile)
+  document.addEventListener('touchstart', function (event) {
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+
+    // agar sidebar open hai aur user ne sidebar aur toggle button ke bahar click kiya
+    if (
+      sidebar.classList.contains('show') &&
+      !sidebar.contains(event.target) &&
+      !toggleBtn.contains(event.target)
+    ) {
+      sidebar.classList.remove('show');
+    }
+  });
+</script>
+
+
+</body>
+</html>

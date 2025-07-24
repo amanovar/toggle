@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>C Language Assignment (Toggle Answers)</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #0073e6;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 2em;
+    }
+
+    .search-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    #search-bar {
+      padding: 8px;
+      width: 70%;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .sidebar-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 160px;
+      background-color: #333;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 60px;
+      left: -160px;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+      z-index: 998;
+    }
+
+    .sidebar.show {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 12px 18px;
+      border-bottom: 1px solid #444;
+      color: white;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+    }
+
+    /* SCROLLABLE LINKS */
+    .scrollable-links {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      
+      white-space: nowrap;
+      padding-left: 0;
+      z-index: 999;
+    }
+
+    .scrollable-links a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    .scrollable-links a:hover {
+      background-color: #0073e6;
+      color: white;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+      padding: 20px;
+      margin-top: 130px;
+      
+    }
+
+    
+    /* FOOTER */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      
+      margin-top: 50px;
+    }
+
+    /* DESKTOP STYLES */
+    @media (min-width: 768px) {
+      .sidebar {
+        left: 0;
+      }
+
+      .sidebar-toggle {
+        display: none;
+      }
+
+      .main {
+        margin-left: 250px;
+      }
+
+      .scrollable-links {
+        padding-left: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="logo">BCA-HUB</div>
+   
+  </header>
+
+ <!-- SCROLLABLE LINKS -->
+  <div class="scrollable-links">
+    <a href="index.html">home</a>
+    <a href="gst.html">All Calculator</a>
+    <a href="math.html">All sem</a>
+    <a href="all.html">C language Quiz</a>
+    <a href="#same2"></a>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+   <a href="c cons.html">C </a>
+  <br>
+  <a href="index.html">HOME</a>
+       <a href="all.html">1 C++ Quiz</a>
+        <a href="adata.html">2 DATA Structure Quiz</a>
+        <a href="dbmss.html">3 DBMS Quiz</a>
+        <a href="netw.html">4 Networking Quiz</a>
+        <a href="os.html">5 OS Quiz</a>
+        <a href="toggle.html">C language Sample Answers</a>
+     
+  </div>
+    
+ 
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+
+
+
+  <style>
+h1 {
+    color: #004080;
+    text-align: center;
+  }
+  .question {
+    margin-top: 20px;
+    padding: 15px 20px;
+    background: #e1ecf9;
+    border-left: 5px solid #007bff;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  .question:hover {
+    background-color: #c7dbf7;
+  }
+  .answer {
+    background: #f1f5fb;
+    border-left: 5px solid #4caf50;
+    margin: 0 0 15px 20px;
+    padding: 15px 20px;
+    font-family: Consolas, monospace;
+    color: #1a1a1a;
+    white-space: pre-wrap;
+    display: none;
+  }
+  code {
+    background-color: #ddd;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+  }
+</style>
+
+
+<h1>C Language Assignment with Sample Answers</h1>
+
+<div class="container">
+
+  <div class="qa">
+    <div class="question">1. C Language kya hai?</div>
+    <div class="answer">
+C ek general-purpose programming language hai jo Dennis Ritchie ne 1972 mein develop ki thi. Yeh fast, powerful, aur system programming ke liye bahut useful hai. Operating systems, embedded systems, aur applications banane ke liye use hoti hai.
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">2. C Language ke Features kya hain?</div>
+    <div class="answer">
+- Simple aur flexible language 
+- Portable (alag-alag machines par chal sakti hai) 
+- Fast execution 
+- Low-level access (memory management ke liye) 
+- Rich set of operators 
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">3. C Program ka Basic Structure kya hota hai?</div>
+    <div class="answer">
+<pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    // Program ka code yahan likhen
+    return 0;
+}
+</pre>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">4. Hello World Program likho:</div>
+    <div class="answer">
+<pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!\\n");
+    return 0;
+}
+</pre>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">5. Variables aur Data Types:</div>
+    <div class="answer">
+Variables memory locations hain jisme data store hota hai. 
+Common data types: 
+- <code>int</code> — integers ke liye 
+- <code>float</code> — decimal numbers ke liye 
+- <code>char</code> — single characters ke liye 
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">6. Operators in C:</div>
+    <div class="answer">
+Arithmetic operators numbers par calculations karte hain. 
+Examples: 
+- <code>+</code> (addition) 
+- <code>-</code> (subtraction) 
+- <code>*</code> (multiplication) 
+- <code>/</code> (division) 
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">7. Comments kaise likhte hain C mein?</div>
+    <div class="answer">
+- Single line comment: <code>// Yeh ek comment hai</code> 
+- Multi-line comment: 
+<pre>
+/* 
+Yeh multi-line 
+comment hai 
+*/
+</pre>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">8. C Language ka Use Kahan Hoti Hai?</div>
+    <div class="answer">
+- Operating systems (jaise Linux, Windows ka kernel) 
+- Embedded systems (microcontrollers, devices) 
+- Game development 
+- Compilers aur interpreters 
+    </div>
+  </div>
+
+
+
+
+   
+
+  <div class="qa">
+    <div class="question">Bonus Question: C Language ki History:</div>
+    <div class="answer">
+C language Dennis Ritchie ne Bell Labs mein 1972 mein develop ki thi. Yeh Unix operating system ko banane ke liye design ki gayi thi.
+    </div>
+  </div>
+<br>
+<br>
+<br>
+
+<style>
+.quastion{
+        
+            display: grid;
+            gap: 10px;
+            background-color: white;
+            padding: 20px;
+            width: 550px;
+            border: 8px;
+            border-radius: 8px;
+    }
+        .quastion :hover {
+      color: #d8d510;
+    }
+
+    .quastion a{
+          color: #457332;
+            text-decoration: none;
+            padding: 5px;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            text-align: center;
+            border-radius: 8px;
+    }
+    
+     .quastion a:hover {
+      color: #d8d510;
+    }
+
+
+    @media (max-width: 768px) {
+      .quastion {
+        width: 100% ;
+        padding: 10px;
+      }
+    }
+    </style>
+
+  <div class="quastion">
+      <h1 id="quiz">BCA-quiz</h1>
+
+
+        <a href="all.html">1 C++ Quiz</a>
+        <a href="adata.html">2 DATA Structure Quiz</a>
+        <a href="dbmss.html">3 DBMS Quiz</a>
+        <a href="netw.html">4 Networking Quiz</a>
+        <a href="os.html">5 OS Quiz</a>
+    </div>
+
+</div>
+
+<script>
+  // Select all question elements
+  const questions = document.querySelectorAll('.question');
+
+  questions.forEach(q => {
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+      // Toggle display of answer
+      if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+      } else {
+        answer.style.display = 'block';
+      }
+    });
+  });
+</script>
+
+
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 BCA-HUB</p>
+  </footer>
+
+  <!-- JS --
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show');
+    }
+  </script>-->
+  <script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('show');
+  }
+
+  // Sidebar close on outside touch (for mobile)
+  document.addEventListener('touchstart', function (event) {
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.querySelector('.sidebar-toggle');
+
+    // agar sidebar open hai aur user ne sidebar aur toggle button ke bahar click kiya
+    if (
+      sidebar.classList.contains('show') &&
+      !sidebar.contains(event.target) &&
+      !toggleBtn.contains(event.target)
+    ) {
+      sidebar.classList.remove('show');
+    }
+  });
+</script>
+
+
+</body>
+</html>

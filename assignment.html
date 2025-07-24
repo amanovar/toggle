@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>C Language Assignment (Toggle Answers)</title>
+<style>
+  h1 {
+    color: #004080;
+    text-align: center;
+  }
+  .question {
+    margin-top: 20px;
+    padding: 15px 20px;
+    background: #e1ecf9;
+    border-left: 5px solid #007bff;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  .question:hover {
+    background-color: #c7dbf7;
+  }
+  .answer {
+    background: #f1f5fb;
+    border-left: 5px solid #4caf50;
+    margin: 0 0 15px 20px;
+    padding: 15px 20px;
+    font-family: Consolas, monospace;
+    color: #1a1a1a;
+    white-space: pre-wrap;
+    display: none;
+  }
+  code {
+    background-color: #ddd;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+  }
+</style>
+</head>
+<body>
+
+<h1>C Language Assignment with Sample Answers</h1>
+
+<div class="container">
+
+  <div class="qa">
+    <div class="question">1. C Language kya hai?</div>
+    <div class="answer">
+C ek general-purpose programming language hai jo Dennis Ritchie ne 1972 mein develop ki thi. Yeh fast, powerful, aur system programming ke liye bahut useful hai. Operating systems, embedded systems, aur applications banane ke liye use hoti hai.
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">2. C Language ke Features kya hain?</div>
+    <div class="answer">
+- Simple aur flexible language 
+- Portable (alag-alag machines par chal sakti hai) 
+- Fast execution 
+- Low-level access (memory management ke liye) 
+- Rich set of operators 
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">3. C Program ka Basic Structure kya hota hai?</div>
+    <div class="answer">
+<pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    // Program ka code yahan likhen
+    return 0;
+}
+</pre>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">4. Hello World Program likho:</div>
+    <div class="answer">
+<pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!\\n");
+    return 0;
+}
+</pre>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">5. Variables aur Data Types:</div>
+    <div class="answer">
+Variables memory locations hain jisme data store hota hai. 
+Common data types: 
+- <code>int</code> — integers ke liye 
+- <code>float</code> — decimal numbers ke liye 
+- <code>char</code> — single characters ke liye 
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">6. Operators in C:</div>
+    <div class="answer">
+Arithmetic operators numbers par calculations karte hain. 
+Examples: 
+- <code>+</code> (addition) 
+- <code>-</code> (subtraction) 
+- <code>*</code> (multiplication) 
+- <code>/</code> (division) 
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">7. Comments kaise likhte hain C mein?</div>
+    <div class="answer">
+- Single line comment: <code>// Yeh ek comment hai</code> 
+- Multi-line comment: 
+<pre>
+/* 
+Yeh multi-line 
+comment hai 
+*/
+</pre>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">8. C Language ka Use Kahan Hoti Hai?</div>
+    <div class="answer">
+- Operating systems (jaise Linux, Windows ka kernel) 
+- Embedded systems (microcontrollers, devices) 
+- Game development 
+- Compilers aur interpreters 
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="question">Bonus Question: C Language ki History:</div>
+    <div class="answer">
+C language Dennis Ritchie ne Bell Labs mein 1972 mein develop ki thi. Yeh Unix operating system ko banane ke liye design ki gayi thi.
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Select all question elements
+  const questions = document.querySelectorAll('.question');
+
+  questions.forEach(q => {
+    q.addEventListener('click', () => {
+      const answer = q.nextElementSibling;
+      // Toggle display of answer
+      if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+      } else {
+        answer.style.display = 'block';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
